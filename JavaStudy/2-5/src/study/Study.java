@@ -36,7 +36,8 @@ public class Study {
 
         // ② 以下の「shopMap.put(shohinList.get(1), 180);」の処理について、コメントを記述してください。
         /*
-         * [shohinListで作成した定数をキーとして扱い、それと対応するようにputした順番に値段という値をセットにしている]
+         * [shohinListで作成した定数をキーとして扱い、それと対応するようにputした順番に値段という値をセットにしている
+         * shopMap.put(shohinList.get(1), 180)は、shohinListの定数に置き換わった牛乳と180という値がセットになっている　]
          *
          */
         LinkedHashMap<String, Integer> shopMap = new LinkedHashMap<String, Integer>();
