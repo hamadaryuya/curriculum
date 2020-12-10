@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  width: 400px;
+}
+
+p {
+  color: white;
+}
+.header {
+  background-color: #141f40;
+  height: 100px;
+  width: 400px;
+}
+
+.left {
+  background-color: #80bfa8;
+  height: 250px;
+  width: 150px;
+  float: left;
+}
+
+.right {
+  background-color: #8c2727;
+  width: 250px;
+  height: 250px;
+  float: right;
+}
+
+.clearfix::after { 
+  content: '';
+  display: block; 
+  clear: both;
+}
+
+.footer {
+  height: 100px;
+  background-color: #d98d30;
+}
