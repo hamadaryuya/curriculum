@@ -9,8 +9,7 @@ public class Check {
 	
 	//課題②
 	private void printName(String firstName, String lastName) {
-		String sumName = firstName + lastName;
-		System.out.println("printNameメソッド  → " + sumName);
+		System.out.println("printNameメソッド  → " + firstName + lastName);
 	}
 	public static void main(String[] args) {
 		Check nm = new Check();
