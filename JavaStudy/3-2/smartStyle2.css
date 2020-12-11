@@ -1,0 +1,70 @@
+@media screen and (max-width: 767px) {
+
+  .wrapper {
+    width: 300px;
+  }
+
+  .header {
+    width: 300px;
+  }
+
+  .left {
+    width: 100px;
+  }
+
+  .yellow {
+    width: 125px;
+  }
+
+  .blue {
+    width: 125px;
+  }
+
+  .pink {
+    width: 75px;
+  }
+
+  .red {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+
+  .wrapper {
+    width: 150px;
+  }
+
+  .header {
+    width: 150px;
+  }
+
+  .left {
+    float: none;
+    width: 150px;
+  }
+
+  .yellow {
+    float: none;
+    width: 150px;
+  }
+
+  .pink {
+    float: none;
+    width: 150px;
+  }
+
+  .blue {
+    float: none;
+    width: 150px;
+  }
+
+  .red {
+    float: none;
+    width: 150px;
+  }
+
+  .footer {
+    width: 150px;
+  }
+}
