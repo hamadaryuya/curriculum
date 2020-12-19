@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.band {
+	background-color: gray;
+	width: 100%;
+	width: 500px;
+	padding: 10px;
+	display: inline-block;
+	font-size: 10px;
+}
+
+.font {
+	color: white;
+	font-size: 20px;
+	display: inline;
+}
+
+.date {
+	display: inline;
+	padding-left: 30px;
+}
+
+.main {
+	padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.border {
+	border: 1px solid black;
+	width: 150px;
+}
+
+td {
+	font-size: large;
+}
