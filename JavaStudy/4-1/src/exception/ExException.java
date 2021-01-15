@@ -63,10 +63,9 @@ public class ExException {
   // 問①は最下部にもあります。
   // ルール: ここへ作成したメソッドを呼び出す
 	 try {
-		 sc.nextInt();
+		 NullPoint();
 	 }
-	 finally {
-		  NullPointMethod();
+	 catch(NullPointerException  e) {
 	 }
  break;
 
@@ -115,8 +114,14 @@ public class ExException {
  * ルール2: 例外発生時に設定するメッセージは、定義済みの定数から適当なものを指定してください。
  */
   // ここへ記述
- private static void NullPointMethod() {
-	 System.out.println(CONST_MSG_NULLPO);
+ private static void NullPoint() throws NullPointerException {
+	 try {
+		 String no = null;
+	     System.out.println(no.length());
+	 }
+	 finally {
+		 System.out.println(CONST_MSG_NULLPO);
+	 }
  }
 
  /**
