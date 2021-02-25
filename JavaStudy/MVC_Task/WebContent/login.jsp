@@ -71,8 +71,8 @@
 <!-- FIXME Step-1-1: login.jspに適用するcssファイルのリンクタグを記述しなさい。-->
 <!-- Tips1: common.css、login.cssの2つを適用-->
 <!-- Tips2: 適用するcssファイルのパスの書き方に注意 -->
-<link rel="stylesheet" href="common.css">
-<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="./css/login.css">
 <script type="text/javascript" src="js/common.js"/></script>
 <title>ログイン</title>
 </head>
@@ -86,16 +86,10 @@
             <!-- 2. class属性と、適用するスタイルの記述-->
             <!-- Tips: common.cssより赤色の文字色を定義しているスタイルを確認 -->
             <div class="error-label">
+            <label class="error-label">
+            <%= message %>
+            </label>
             </div>
-            <label>
-            社員番号:
-            <input type="text" name="login-form">
-            </label>
-            <label>
-            パスワード:
-            <input type="text" name="login-form">
-            </label>
-
 
             <br>
         <% } %>
