@@ -6,6 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 //問２－１ リポジトリを作成するアノテーションを記述
+// CrudRepositoryはCRUD操作のためのメソッド提供
 @Repository
 public interface AccountRepository extends CrudRepository<Account, Long> {
     public Account findByUsername(String username);

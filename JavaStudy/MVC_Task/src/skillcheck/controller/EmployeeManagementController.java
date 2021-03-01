@@ -26,6 +26,7 @@ import skillcheck.util.RequestTypeUtil.RequestType;
  * @author y.sato
  * @since 2019/01/02
  */
+// 抽象クラスであるBaseServletを継承、オーバーライドして実際の中身を定義している
 public final class EmployeeManagementController extends BaseServlet {
 
     /**
@@ -61,6 +62,7 @@ public final class EmployeeManagementController extends BaseServlet {
             // セッション切れの場合は早期離脱（finallyは実行される）
             if (!hasSession) return;
 
+            // switch文の時値がどの条件にも当てはまらない時の処理をdefaultで記載する
             switch (requestType) {
             case LOGOUT:
                 HttpSession session = request.getSession(false);
@@ -116,6 +118,7 @@ public final class EmployeeManagementController extends BaseServlet {
         // MEMO: Functionは、apply(引数)で処理を実行
 
         // リクエストより社員番号を取得（※削除時は複数の可能性あり）: 関数型インターフェース（ラムダ式）
+        // ラムダ式はクラスの宣言とインスタンスの宣言を同時に行うもの
         Function<HttpServletRequest, List<String>> rmdGetEmpIdList = (rmdRequest) -> {
             // FIXME Step-4-2: 各jspよりPOSTで送信されたリクエストパラメーターの社員番号を取得しなさい。
             // Tips: jsp側のname属性と一致させること

@@ -10,6 +10,7 @@ import skillcheck.exception.MVCException;
  * @author y.sato
  * @since 2019/01/02
  */
+// インターフェースなので、具体的な処理内容の記述は無し。処理は、EmployeeManagementServiceで記述
 public interface EmployeeDao {
 
     /**
@@ -22,6 +23,7 @@ public interface EmployeeDao {
      * FIND_BY_EMPID_WITH_LIKE 社員番号（前後方一致}
      * </pre>
      */
+	//  いくつかの定数をひとまとめにするenum
     public enum ExecuteCase {
         FIND_ALL,
         FIND_BY_EMPID,

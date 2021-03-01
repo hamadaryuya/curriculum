@@ -24,6 +24,8 @@ import skillcheck.util.PasswordHashUtil;
  * @author y.sato
  * @since 2019/01/02
  */
+// 抽象クラス
+// BaseServletのクラスはどのようなメソッドかを記載しているが、中身は伴わない
 public abstract class BaseServlet extends HttpServlet {
 
     /* 定数 */
@@ -31,6 +33,7 @@ public abstract class BaseServlet extends HttpServlet {
 
     // FIXME Step-3: 定数定義
     // FIXME Step-3-1: リクエスト判別用のボタンの属性名を記述しなさい。
+    //サブクラスからのアクセスを可能にしている
     protected static final String CONST_ELEMENT_NAME_REQUEST = "requestType";
     protected static final String CONST_REQUST_KEY_FOR_SENDER = "sender";
     protected static final String CONST_REQUST_KEY_FOR_REDIRECT = "redirect";
@@ -43,6 +46,7 @@ public abstract class BaseServlet extends HttpServlet {
 
     /* フィールド変数の定義 */
     /** フォーワード先 */
+    //　処理の転送先のこと
     protected String destinationTarget;
     /** レスポンス情報 */
     protected ResponseBean responseBean;
@@ -133,6 +137,7 @@ public abstract class BaseServlet extends HttpServlet {
      * @return
      * @throws IOException
      */
+    // パスワードの比較を行っている
     protected boolean validateLogin(final HttpServletRequest request) throws IOException {
         Logger.logStart(new Throwable());
 
@@ -151,9 +156,11 @@ public abstract class BaseServlet extends HttpServlet {
             // Tips2: 完全一致検索の社員情報取得を呼び出すこと
             // Tips3: 第二引数の渡し方に注意すること
             // ←ここへ記述
+        	//レスポンス情報に、社員情報サービスのメソッドでdaoの社員情報取得処理を行う、第二引数には、取得したID
         	responseBean = ems.getEmployeeData(ExecuteCase.FIND_BY_EMPID,new EmployeeBean(reqEmpId));
 
             // 最初の1件を取得
+        	// 配列や集合体を処理を行えるstreamのAPI
             resEmployeeBean = responseBean.getEmplyeeBeanList().stream().findFirst().orElse(null);
 
             if (Objects.nonNull(resEmployeeBean)) {
@@ -161,6 +168,7 @@ public abstract class BaseServlet extends HttpServlet {
                 final String hashPassword = PasswordHashUtil.getSafetyPassword(reqPassword, reqEmpId);
                 if (resEmployeeBean.getPassword().equals(hashPassword)) {
                     // ログイン成功
+                	// フォワードを成功した実行結果表示の行き先に指定
                     this.destinationTarget = CONST_DESTINATION_RESULT_JSP;
                     message = ConstMessage.SUCCESS_LOGIN;
                     // 社員番号をログインセッション情報として登録

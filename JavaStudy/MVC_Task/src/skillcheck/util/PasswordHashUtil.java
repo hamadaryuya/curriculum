@@ -10,6 +10,7 @@ import javax.crypto.spec.PBEKeySpec;
 
 import skillcheck.logger.Logger;
 
+// 入力された文字列をハッシュ化しているクラス
 /**
  * パスワードハッシュユーティリティ
  *

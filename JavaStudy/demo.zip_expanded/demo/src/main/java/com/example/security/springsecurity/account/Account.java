@@ -24,6 +24,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 //実行時に宣言した各フィールド変数がカラムとして作成される
+// userdetailsはユーザー名とパスワードを保存しアカウント情報を出力するインターフェース
 //問１－１ DB設計に必要なアノテーションを記述
 @Entity
 @Table(name="accounts")

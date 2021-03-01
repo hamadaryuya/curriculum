@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 //問３－１ Serviceであることを表すアノテーションを記述
+//
 @Service
 public class AccountService implements UserDetailsService {
 
